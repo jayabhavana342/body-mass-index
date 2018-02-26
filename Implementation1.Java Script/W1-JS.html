@@ -1,0 +1,128 @@
+<html>
+<head>
+<!--Title of the Page-->
+	<title>Assignment W1-Implementation 1</title>
+<!--Page styles are obtained from W1Q1style.css-->
+	<link rel="stylesheet" type="text/css" href="W1Q1style.css">
+<script language="javascript">
+document.onmousedown=disableclick;
+status="Right Click Disabled";
+function disableclick(event)
+{
+  if(event.button==2)
+   {
+     alert(status);
+     return false;    
+   }
+}
+</script>
+</head>
+
+<body oncontextmenu="return false">
+<center>
+<h2><b>***Assignment W1-Implementation using JavaScript***</b></h2>
+</br>
+<table>
+	<tr>
+		<td>
+			<div>
+				<b><i>BMI<sub>Imperial</sub></i></b>
+			</div>
+			<div>
+				=
+			</div>
+			<div equation>
+				<div numerator>
+					(Weight in Pounds) x (703)
+				</div>
+				<div>
+				------------------------------------
+				</div>
+				<div denominator>
+					(Height in Inches)<sup>2</sup>
+				</div>
+            
+			</div>
+		</td>
+		<td></td>
+		<td>
+			<div>
+				<b><i>BMI<sub>Metric</sub></i></b>
+			</div>
+			<div>
+				=
+			</div>
+			<div equation>
+				<div numerator>
+					(Weight in Kilograms)
+				</div>
+				<div>
+				---------------------------
+				</div>
+				<div denominator>
+					(Height in Meters)<sup>2</sup>
+				</div>
+            
+			</div>
+		</td>
+	</tr>
+</table> 
+
+</br>
+</br>
+</br>
+
+<div calculation>
+	<h3><font color="red">Choose a Radio Button for BMI Calculation:</font></h3>
+	
+	<div id="radio">
+	<input type="radio" name="v" value="i" id="i">BMI<sub>Imperial</sub>
+	<br/>
+	<input type="radio" name="v" value="m" id="m">BMI<sub>Metric</sub>
+	<br/>
+	</div>
+	
+	</br>
+	
+	<div>
+	<b>Enter Height:</b> <input type = "text" name="height" id="h"/><br/>
+	<b>Enter Weight:</b> <input type = "text" name="weight" id="w"/><br/>
+	</div>
+	
+	</br>
+	
+	<button onclick="calculate()">submit</button>
+</div>
+
+</center>
+
+<script>
+	function calculate() {
+    	
+		var height = document.getElementById("h").value;
+		var weight = document.getElementById("w").value;
+		
+		var r;
+		
+		if (document.getElementById('i').checked) {
+ 			 r = document.getElementById('i').value;
+		}
+		
+		if (document.getElementById('m').checked) {
+ 			 r = document.getElementById('m').value;
+		}
+		
+		if(r=='i') {
+			var result = (weight * 703) / (height * height);
+		}
+		
+		if(r=='m') {
+			var result = (weight) / (height * height);
+		}
+		
+		alert("Body Mass Index: "+result);
+	}
+</script>
+
+</body>
+</html>
